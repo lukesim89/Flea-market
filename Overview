@@ -1,0 +1,34 @@
+Broad objective
+  Why do people make destabilizing movements? What are the processes underlying destabilizing movements (Spontaneous and transitional)
+  
+    **Exploratory**
+    We  know that reactive destabilizing are a result from excessive  input either due to  slow reaction time or lapse in concentration
+    Q1)  How do neural correlates (EEG imaging of the cortex) differ between the three different destabilizions (i.e., spontaenous vs reactive vs transitional).
+    Q2)  What characteristics (Neural or behavioural)  allow us to distinguish between the 3 catergories?
+    Q3)  Are we able to predict destabilizing movements through the observation of neural correlates?
+    Q4)  Can we use a classifier in conjunction with ERN signals to determine subject intention?
+    Q5)  Do these destabilizing movements differ from person to person or even within the same subject?
+    Q6)  Understanding the contribution of different wavelengths for different destabilizing commands   
+    Q7)  Dyadic task, math equation describing a persons' skill level and how it compliments a person of similar or different skill level (disparity analysis)
+    
+    **Application**
+    Q1)  Can we use distinguishing characteristics to prevent either (1) subject from producing destabilizing movement or (2) correct an executed destabilizing movement
+    Q2)  Training program for pilots/drone control facilitate learning process (graded assistance). counteract floor effects.
+    
+    
+    
+    
+Tasks to-do
+    1) 2 ERN papers to support Q4(exploratory)
+    2) Meet Eric fields/Sekuler
+    3) Aly and Gutsell (EEG setup details)
+    4) Demographic (3)
+    5) Matlab code (pipeline)
+    5.5) pump all data through pipeline
+    6) Matlab code (destabilization description code)
+    7) Matlab code for ideas of classifier (nearest K, Support vector machine, linear  discriminant analysis, discrete wavelet transform
+    8) Journal (special editions)
+    
+    
+    
+    
