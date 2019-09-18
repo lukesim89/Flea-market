@@ -1,0 +1,23 @@
+Bang Bang control - step input into the hulk (bang bang - control is restricted to an upper and a lower bound)
+  Idea:setup hulk input to be step instead of gradual, 
+  Problem: not as simple as adjusting gain, if we turn up the gain to max, the falling of the hulk is a product of the joystick input
+           and the dyanmics of the hulk. If the gain is too high, it would just become user operator oscilliations.
+           
+  Questions: are the same pattern of errors in continuous control seen in discrete (bang bang/step input)? are there new ones?
+             How to people transition from contiuous to discrete and vice versa
+             Are the same corrective movements seen in continuous also seen in discrete?
+             
+             
+             plateu at different levels (
+             fallrate (600)
+             is it intermittency or joystick magnitude deflection 
+             what does it say about basic science? what is it tha tpeople are trying to show in bang bnag control
+             what parameters you want to adjust.
+             what are the benefits of bang bang vs continuous and vice versa
+             proportional control - the action taken, the feedback is IN PROPORTION to the degree the system diverages from the ideal point (continuous)
+             two-step controller/on-off controller/hysteresis controller("hysteresis" means a lag in response to change)
+             
+             a light switch is bang bang, but while the input is on/off, you can add a additional "variable resistor"
+             are there advantages of bang bang over conventional proportional control? 
+              (1) easier to program/implement
+              (2) allows investigation of human strategy under constrained conditions?
