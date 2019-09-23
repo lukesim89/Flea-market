@@ -1,0 +1,39 @@
+Are spontaneous destabilizations dumb? they sure do look like they are. How challenege that basic assumption. How often does the motor 
+do dumb things? quite rarely actually. When do these dumb phenonomons happen? usually in the context of "lack of information/misinformation"
+
+Spontaneous suggests an occurance of an event in the absence of input. the observation the spontaneous destabilizations dramatically drop
+off after initial learning experience is evidence that they cannot be spontaneous.
+
+The crux of the theory is built on the idea of "Insufficient information"
+    This insufficiency of information can be due to many things (e.g., daydreaming, lapse in concentration, sensory overload).
+    In essence, this means that the motor system is operating under a state of "insufficient information". we cannot directly communicate with 
+    motor system. When in a rotating room, even though i know the room is rotating and that I have to make adaptations, I cannot directly inform 
+    the motor system to make precise adjustments even if i knew exactly what adjustments are needed. the motor system adapts at its own rate.
+In the context of the Visual inverted pendulum paradigm, at any given point of time (t), if a gap of information flow occurs, the motor system 
+based on existing limited knowledge, knows the objective is bring the pendulum to its Direction of balance. Thus, at any given point of time, 
+in the absence of feedback (visual in this case), the motor system can adopt 3 solutions (categorical for sake of simplicity). 
+                  (1): do nothing. we dont know what is the optimal input and there is a small chance it wont crash.
+                  (2): feedforward left deflection : see comments for (3)
+                  (3): feedforward right deflection : chances are, left or right deflection has approximately 50% to save the pendulum
+                  
+If there is a 50% chance to save the pendulum given this strategic gamble, why do we only see crashes? because of the way we define 
+"spontaenous destabilizations". Assume that 50 gambles were executed. and E(p)=.5, approximately 25 of those gambles result in a crash and the 
+other 25 in saves (pendulum not crashing). We won't see the saves. we only look at the times the gamble fails and thus label them as spontaenous destabilizations
+That is, we only look at the times the gamble fails.
+
+Why does spontaenous destabilizations dramatically reduce after first few trials? because the motor system has learnt to organize/internalize the 
+model dynamics of the VIP. Once the motor system has a sufficient understanding of the VIP model dynamics, it can extrapolate better in interruptions
+to feedback (i.e., the motor system is better able to extrapolate in finer details what the pendulum is during even after a disruption of feedback
+
+**the more the motor system knows (either by feedback or experience), the less it has to guess.
+
+Predictions:  1)Reduction in relevant information will increase occurances of spontaneous destabilizations in naive subjects. (e.g., concurrent distractor task)
+              2)adding information will decrease the occurances of spontaneous destabilizations in naive subjects (e.g., N(spontaneous destab) in mars < N(spontaneous destab) in VIP
+              3)changing model dynamics should increase the number of spontaneous destabilizations in experienced subjects (i.e., motor system adapts at its own rate, you cannot explicity adapt even if you consciously know)
+              4)abs(magnitude) of user initated perturbation should be correlated with abs(velocity) of pendulum at moment of spontaneous destabilizations
+              5)participant's (**motor system**) ability to extrapolate a pendulum's outcome in the absence of feedback is a measure of the degree a model has been internalized (problem: motor system and higher consciouness do not communicate well)
+              
+              
+              Modulated by: how adverse is a participant to crashing
+                            how motivated the participant is to not crashing
+                            
