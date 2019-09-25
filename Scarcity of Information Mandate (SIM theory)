@@ -11,10 +11,10 @@ The crux of the theory is built on the idea of "Insufficient information"
     the motor system to make precise adjustments even if i knew exactly what adjustments are needed. the motor system adapts at its own rate.
 In the context of the Visual inverted pendulum paradigm, at any given point of time (t), if a gap of information flow occurs, the motor system 
 based on existing limited knowledge, knows the objective is bring the pendulum to its Direction of balance. Thus, at any given point of time, 
-in the absence of feedback (visual in this case), the motor system can adopt 3 solutions (categorical for sake of simplicity). 
-                  (1): do nothing. we dont know what is the optimal input and there is a small chance it wont crash.
-                  (2): feedforward left deflection : see comments for (3)
-                  (3): feedforward right deflection : chances are, left or right deflection has approximately 50% to save the pendulum
+in the absence of feedback (visual in this case), the motor system can adopt 2 solutions (categorical for sake of simplicity). 
+                 
+                  (1): feedforward left deflection : see comments for (2)
+                  (2): feedforward right deflection : chances are, left or right deflection has approximately 50% to save the pendulum
                   
 If there is a 50% chance to save the pendulum given this strategic gamble, why do we only see crashes? because of the way we define 
 "spontaenous destabilizations". Assume that 50 gambles were executed. and E(p)=.5, approximately 25 of those gambles result in a crash and the 
@@ -36,4 +36,6 @@ Predictions:  1)Reduction in relevant information will increase occurances of sp
               
               Modulated by: how adverse is a participant to crashing
                             how motivated the participant is to not crashing
+                            
+              The EEG signal of spontaneous destabilizations may have different phases and timing but might reflect part and parcel of the same decision process
                             
