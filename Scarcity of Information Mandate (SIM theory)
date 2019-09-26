@@ -32,7 +32,8 @@ Predictions:  1)Reduction in relevant information will increase occurances of sp
               3)changing model dynamics should increase the number of spontaneous destabilizations in experienced subjects (i.e., motor system adapts at its own rate, you cannot explicity adapt even if you consciously know)
               4)abs(magnitude) of user initated perturbation should be correlated with abs(velocity) of pendulum at moment of spontaneous destabilizations
               5)participant's (**motor system**) ability to extrapolate a pendulum's outcome in the absence of feedback is a measure of the degree a model has been internalized (problem: motor system and higher consciouness do not communicate well)
-              
+                    motor system estimate (e.g., after viewing 500ms of pendulum moving at a random location, ask participant to input joystick command to reduce pendulum's velocity to 0. (maybe bang bang for harder difficuklty)
+                    verbal (testing participant while controlling for motor sytem?)
               
               Modulated by: how adverse is a participant to crashing
                             how motivated the participant is to not crashing
