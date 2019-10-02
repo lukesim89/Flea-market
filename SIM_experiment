@@ -1,0 +1,21 @@
+Study design - 9/26/2019
+
+Hypothesis: 1) frequency of spontaneous destabilizations increases as task-relevant-information (TRI) decreases
+              1.1) frequency of spontaneous destabilization decreases as a TRI increases. (inversely proportional)
+            2) implicit vs explicit strategies for visuomotor adaptations are independent (participant's explicit...
+               strategy will not influence motor system's rate of adaptation)
+            
+            
+          
+Scintilating dots(1) vs distractor task(2) (both reduce the amount of information present but through different mechanisms. 
+1)
+
+
+
+
+setup: randomize pendulum location and velocity (cannot be entirely random because its really easy to estimate the pendulum is going to...
+crash if its +90degrees per second and near crash boundary). Show participants pendulum for 500ms. blank screen with masking stimulus
+Question: have participants estimate where the pendulum will be after 1 second masking delay, 2 second, 3 second, 4 second and 5 seconds. 
+Ask participants "what is the change in pendulum posiition between when u last saw it and 1 second later... 4 and 5 seconds later.
+Ask participants: use joystick to input a single pulse that would bring the PENDULUM as close to the DOB as possible (bang bang vs proportional control)
+Ask participants: verbally report what angle the pendulum will be at (range -90:90) and how fast it is moving.
