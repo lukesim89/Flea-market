@@ -24,13 +24,14 @@ represent a compensatory mechanism by the motor system. I will explain in detail
     do not map onto the motor system 1:1. That is, even if you knew exactly what movement adjustments are needed to counteract the force field,
     the motor system will still need to make its own implicit adaptation.
     
-    1.2.1 Example of how we cannot directly communicate with the motor system
+    1.2.1 Example of how we cannot directly communicate with the motor system 
     
         1) Although basketball nets are standardized across the nation for competitions, festival/carnival games do not. Specifically for 
         the purpose of exploiting this concept (1.2). By making the basketball net slightly higher or lower, there is a discrepancy between our 
         internal and external model (internal - what our motor system has learnt. external - what reality actually is). Even if this discrepancy
         is known to the subject, adjustments are hard because the internal model has been so well learnt that the motor system is more robust to change
-        and since we cannot directly interface with the motor system, these adaptations occur at the motor system's own pace
+        and since we cannot directly interface with the motor system, we cannot make direct adjustments to our internal model. Given sufficient practice
+        with the new moel, these adaptations at the motor system's level can occur. But the key here is that the motor system adapts at its own pace.
 
 1.3 (Why do we only see failed outcomes from the gamble)
     
@@ -60,8 +61,7 @@ represent a compensatory mechanism by the motor system. I will explain in detail
        Visuomotor adaptation is independent from explicit knowlege of a model
     7) EEG would display ERNs in response to the SpontD events. but the preceeding activity may reflect the process of decision
     8) A participant with a higher Assimilation Index (AI), a measure of model internalization will outperform a participant with a lower
-       AI.
-    
+       AI.    
     
 Study design - 9/26/2019
 
@@ -96,14 +96,37 @@ Study design - 9/26/2019
           During the "perceptual" estimation phase, participants after viewing the randomized VIP scenario (randomized velocity and position), will
           make verbal/written estimation of how fast the pendulum will be moving (velocity in degrees/s) at the Direction of balance under the shown
           scenario.
+          
+    1.7.4 (Participant pool and analysis)
+    
+          n=50 half will begin with motor estimation and half will begin with "perceptual" estimations.
+          
+          Absolute difference between motor and "perceptual" estimations = (D) disparity, if (D) for SecDelay=1 is non-sig (single sample ttest), label as low disparity, 
+          else, label as high disparity.
+          
+          Assimilation Index (AI) for motor estimation and verbal estimation will be compared within subjects. then between subjects.
+          
+          ANOVA 1 way for 1,2,3,4,5 second delay estimations within subjects. Then pool all subjects data for 1 scond delay and compared against 2,3,4,5 seconds
          
+          
  1.8 (study metrics)
  
-      Participant's motor and "perceptual" estimations will be averaged to produce a single index. (AI) assimilation index = (n * dPOI)/1000
-      n = number of seconds after viewing visual stimulus that the estimate was made at
+      Participant's motor and "perceptual" estimations will be averaged to produce a single index. (AI) assimilation index = (SecDelay * dPOI)/1000
+      SecDelay = number of seconds after viewing visual stimulus that the estimate was made at
       dPOI = degree disparity from the point of interest
           
       
  1.9 (Applications)
       Objective way to measure motor system's internatization of the model
       Can AI be used to estimate performance?
+      
+      
+      
+      
+Extra ideas:
+
+    9) EEG's error related negativity signal can be modulated by task objective (e.g., avoid crashing and stay at the DOB  vs. Stay at the DOB)
+    10)If a model is extremely well learnt, would the knowledge spill over from the motor system into the conscious mind? that is. verbal estimates
+       will be accurate but motor system should always be more accurate.
+       
+       Compare number of SpontD in MARS vs VIP paradigm?
