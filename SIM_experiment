@@ -9,9 +9,10 @@ represent a compensatory mechanism by the motor system. I will explain in detail
     In the context of "insufficient task relevant information", either due to (e.g., lapse in concentration, sensory overload, multitasking etc...)
     the motor system is operating under a state of "insufficient information". In the context of the VIP (visual inverted pendulum), the subject understands
     the objective of the task (avoid falling past the crash boundary and stay as close to the direction of balance). The motor system knows 
-    that it must input some joystick command to avoid crashing but does not know which direction or magnitude to input. As such, the Motor system
-    may resort to gambling. In other words, in a feedforward sense, the motor system can input a left or right deflection. Given the dynamics of 
-    the VIP, this feedforward gamble is likely to produce a higher percentage of desirable outcome compared to simply doing nothing.
+    that it must input some joystick command to avoid crashing but does not know which direction or magnitude to input due to the
+    lack of information. As such, the Motor system may resort to gambling. In other words, in a feedforward sense, the motor system can 
+    input a left or right deflection. Given the dynamics of the VIP, this feedforward gamble is likely to produce a higher 
+    percentage of desirable outcome compared to simply doing nothing.
     
       (1): Feedforward left deflection: see comments for (2)
       (2): Feedforward right deflection: chances are, a left or right deflection has a higher percentage of a desirable outcome compared to
@@ -24,14 +25,12 @@ represent a compensatory mechanism by the motor system. I will explain in detail
     do not map onto the motor system 1:1. That is, even if you knew exactly what movement adjustments are needed to counteract the force field,
     the motor system will still need to make its own implicit adaptation.
     
-    1.2.1 Example of how we cannot directly communicate with the motor system 
+    1.2.1
     
-        1) Although basketball nets are standardized across the nation for competitions, festival/carnival games do not. Specifically for 
-        the purpose of exploiting this concept (1.2). By making the basketball net slightly higher or lower, there is a discrepancy between our 
-        internal and external model (internal - what our motor system has learnt. external - what reality actually is). Even if this discrepancy
-        is known to the subject, adjustments are hard because the internal model has been so well learnt that the motor system is more robust to change
-        and since we cannot directly interface with the motor system, we cannot make direct adjustments to our internal model. Given sufficient practice
-        with the new moel, these adaptations at the motor system's level can occur. But the key here is that the motor system adapts at its own pace.
+    The evidence of aftereffects following adaptation to a force field, that is, the occurances of these adaptive solutions in the absence
+    of perturbation (e.g., force field) suggests that the adaptation of internal models is an implicit process that remain inaccessible
+    to awareness/consciousness.
+   
 
 1.3 (Why do we only see failed outcomes from the gamble)
     
@@ -46,6 +45,14 @@ represent a compensatory mechanism by the motor system. I will explain in detail
     participant gets better, he/she is able to utilize the internalized model to extrapolate model information during these "insufficient information"
     periods. As such, the need to adopt such a compensatory mechanism such as gambling is greatly diminished.
     In short, the more the motor system knows, the less it has to guess.
+    
+    1.4.1
+    
+    Internal model : subjective representation of environment dynamics within a frame of reference. This model attempts to mimic the input
+    -output relationship of the system being perturbed. Improvement would suggest the model becomes more accurate at representation and more
+    sensitive to prediction errors
+    
+    *More Forward model rather than an inverse model
     
 1.5 (Predictions)
     
@@ -82,12 +89,27 @@ Study design - 9/26/2019
           NOTE: outcome pendulum shouldnt be within 10 degrees of the direction of balance (if so, participant may opt to produce
           no joystick input)
           
-    1.7.2 (Participant estimation phase (motor estimation)
+          1.7.1.1 Control setup
+          
+          Have participants watch the whole playout of the randomized VIP scenario and have them estimate pendulum speed at the direction of balance (no input)
+          (or any point of interest). This will provide a baseline to compare motor(implicit) and verbal(explicit) to.
+          
+          1.7.1.2 Catch trial
+          
+          Show randomized VIP scenario with randomized position but zero velocity.
+          
+    1.7.2 (Participant estimation phase (motor estimation)) 
     
           Participants make both motor and "perceptual" estimations of pendulum outcome 1,2,3,4,5 seconds after scenario feedback stops half participants will make motor estimation first and vice versa (counterbalance)
           During the motor estimation phase, participants after viewing the randomized VIP scenario (randomized velocity and position), will
           make a feedforward, single pulse input of the joystick to place the pendulum as close to the direction of balance as possible
           The Dependent variable will be the degree/s (velocity) of the pendulum at the Direction of balance under the shown scenario
+          
+          1.7.2.1 Testing experienced subjects
+          
+          Experienced subjects will be asked to estimate a randomized VIP scenario first (they should perform well compared to naive subjects)
+          and change the model dynamics (e.g., joystick gain/fall constant). Compare initial error and deviation at steady state adaptation. 
+          Record rate of adaptation (time from when adaptation begins to steady state) NOTE: ??how to determine when adaptation start??
           
     1.7.3 (Participant estimation phase (perceptual estimation)
     
@@ -96,6 +118,7 @@ Study design - 9/26/2019
           During the "perceptual" estimation phase, participants after viewing the randomized VIP scenario (randomized velocity and position), will
           make verbal/written estimation of how fast the pendulum will be moving (velocity in degrees/s) at the Direction of balance under the shown
           scenario.
+          
           
     1.7.4 (Participant pool and analysis)
     
@@ -111,22 +134,39 @@ Study design - 9/26/2019
           
  1.8 (study metrics)
  
-      Participant's motor and "perceptual" estimations will be averaged to produce a single index. (AI) assimilation index = (SecDelay * dPOI)/1000
+      1.8.1 Assimilation index (measure of model's "accuracy")
+ 
+      Participant's motor and "perceptual" estimations will be averaged to produce a single index. (AI) assimilation index = 1000/(Secdelay*dPOI)
       SecDelay = number of seconds after viewing visual stimulus that the estimate was made at
-      dPOI = degree disparity from the point of interest
+      dPOI = degree/s disparity from the point of interest (e.g., subject estimates pendulum velocity as -30degree/s at the DOB but actual
+      velocity is -24 degrees/s, dPOI would be 6 degrees/s
+      
+      1.8.2 Plasticity index (measure of model's speed to adaptation and rate of adaptation)
+      
+      Given that the motor system in a feedback loop, compares desired outcome with reality, (PI) would be a measure of how long it
+      takes participants to detect that a new strategy/model is needed to achieve the end goal AND how fast the model is adapted to
+      new model parameters (note: "ADAPT" refers to strategy steady state regardless of actual score)
           
       
  1.9 (Applications)
       Objective way to measure motor system's internatization of the model
-      Can AI be used to estimate performance?
+      Can AI and PI be used to estimate performance?
+      
+      1.9.1 How to exploit our inability to directly modulate our internal model 
+    
+        1) Although basketball nets are standardized across the nation for competitions, festival/carnival games do not. Specifically for 
+        the purpose of exploiting this concept (1.2). By making the basketball net slightly higher or lower, there is a discrepancy between our 
+        internal and external model (internal - what our motor system has learnt. external - what reality actually is). Even if this discrepancy
+        is known to the subject, adjustments are hard because the internal model has been so well learnt that the motor system is more robust to change
+        and since we cannot directly interface with the motor system, we cannot make direct adjustments to our internal model. Given sufficient practice
+        with the new moel, these adaptations at the motor system's level can occur. But the key here is that the motor system adapts at its own pace.
       
       
-      
-      
-Extra ideas:
 
-    9) EEG's error related negativity signal can be modulated by task objective (e.g., avoid crashing and stay at the DOB  vs. Stay at the DOB)
-    10)If a model is extremely well learnt, would the knowledge spill over from the motor system into the conscious mind? that is. verbal estimates
-       will be accurate but motor system should always be more accurate.
        
-       Compare number of SpontD in MARS vs VIP paradigm?
+Questions:
+
+    Question: Distinction of skill acquisition and adaptation? 
+        Answer: skill acquisition is learning from scratch. adaptation is adjustment of existing knowledge
+            Problem: How can we distinguish between whether a subject creates a new model, or adapts an existing one, or stitches together a new
+                     one from small snippets of many models?
