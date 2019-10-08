@@ -3,3 +3,13 @@ Forcing participants into a discrete setup. Does it explain what happens during 
 how can we get a response tha cannot be explained/predicted by feedback?
 
 What about having participants view the pendulum first a few trials, then get them to play. does just viewing it help improve after performance?
+
+
+what does it mean if delay or changing coefficients has a effect? what does it mean if there is no effect?
+
+bring participants into lab, naive subjects are given the setup and make estimations. to prove that they arent just estimating it based on 
+velocity or some other factor and that they have indeed internalized the model, we will bring them in again and have them do the same experiment 
+but change certain paramters of the VIP model e.g., fall rate joystick gain etc. if we see a persistant error, it will suggest
+that the participant is not just relying on context cues and is actually going off his own internal model.
+
+We then measure their AI?
