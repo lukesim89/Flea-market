@@ -1,0 +1,40 @@
+%Name: Team 10
+%Collaborators : Patop,Inex + Sim, Luke + Zhang, Bingjie
+
+%%Teamprojct #1 started on :10/16/2019
+%%follow: https://sites.google.com/site/brandeisbiol107a/team-projects/tp1
+%%repository: https://drive.google.com/drive/u/1/folders/0AP2-4MW8IDthUk9PVA
+%%github: https://github.com/ipatop/tema10bio107
+
+%%FUNCTIONS NEEDED    (1):
+%                     (2):
+%                     (3):
+%                     (4):
+%                     (5):
+%
+%%STRUCTURES NEEDED   (1):
+%                    
+%%files NEEDED        (1): mouse_arm1.txt
+%                     (2): mouse_data.folder (mouse_data_team3.zip)
+%
+%
+%%clears command window
+close all %%closes all figures.
+clear all %%clears all definitions and figures
+
+data=load('mouse_arm1.txt','-ascii'); %%load data
+locations=data(1,:) %first row into "locations"
+rawdata=data(2:end,:); %row 2 through N.
+mn_resps=mean(rawdata); %computes the mean at each location
+std_resps=std(rawdata); %computes SD
+Num_reps=size(rawdata,1); %number of rows in rawdata
+std_err_resps=std_resps/sqrt(Num_reps); %%standard error
+figure(1); %figure 1
+errorbar(locations,mn_resps,std_err_resps,std_err_resps); %%use FUNCTION "errorbar" to plot upper and lower standard error
+xlabel('Locations(mm)'); %x axis label
+ylabel('Mean response (spikes/sec)'); %y axis label
+
+
+%%gaussian curve to fit : a+b*exp(-((x-c).^2)/(2*d^2))
+
+fit_arm_nerve.m :take the name of file to read as input, outputs a b c and d deteremined by fit.
