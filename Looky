@@ -1,0 +1,242 @@
+%Name: Luke Sim
+%Collaborators : No one
+
+%%PS1.3 started on :10/4/2019
+%%follow: https://sites.google.com/site/brandeisbiol107a/problem-sets/ps-1-3
+%%repository: (windows button + r) \\unethome.brandeis.edu\lukesim
+
+%%FUNCTIONS NEEDED  (1):
+%                     (2):
+%                    
+%%FILES NEEDED        (1): healing_times.txt
+%                     (2): rat_ink.txt
+%                     (3): rat_noink.txt
+%
+clc %%clears command window
+close all %%closes all figures.
+clear all %%clears all definitions and figures
+
+%%Question 1.1
+A=[15 16 17; 18 19 20; 21 22 23; 24 25 26]; %assigning elements to A
+A(:,1); %first column
+A(1,:); %first row
+A(:,[1 2]); %first and second columns
+A(:,[3 2 1]); %3rd column, 2nd column, 1st column
+A(:,1)+ A(:,2); %add column 1 and 2 together
+A(:,[1+1]); %returns 2nd column since 1+1=2
+A(:,[1+2 1+1]); %returns 3rd column and 2nd column
+
+%%QUESTION 1.8
+A(1); %% SAB returns the nth element in A matrix
+A(2); %% SAA
+A(3); %% SAA
+A(4); %% SAA
+A(7); %% SAA note: in a 4x3 matrix, 4 columns 3 rows, matlab counts top left to bottom left then second column down to 2nd column last row
+A(3:7); %% returns 3rd to 7th element in the matrix
+
+%%not really surprised.
+
+%%Question 2
+%%pre-matlab answer
+%%Ans2_1=[1 6 5; 2 7 5; 3 13 5; 4 14 5; 5 15 5]; % first column is I, 2nd is J, 3rd is K
+
+%%Actual while loop for Q2.1
+i=1;
+k=5;
+m=[6 7 8 9 10 11 12 13 14 14];
+while i<=k
+    j=m(i);
+    if i>2
+        j=j+k;
+    end
+    i=i+1;
+end
+
+%%QUESTION 2.2
+constant_normal=10; %%beginning cell count for normal
+constant_mutant=10; %%beginning cell count for mutant
+reproduce=3; %%reproduction rate
+total_mutant=[]; %create total_mutant
+total_normal=[];%create total_mutant
+limit=12; % number of iterations
+iteration=1; %starting block
+while iteration<=limit %while current iteration is less or equal to limit(12), go into loop
+    total_normal=constant_normal*reproduce %constant_normal * reproduce 
+    constant_normal=total_normal %updating constant_normal
+    
+    total_mutant=constant_mutant*(reproduce/2) %constant_mutant * reproduce/2
+    constant_mutant=total_mutant %updating constant_mutant
+    
+    iteration=iteration+1; %every loop updates iteration by 1.
+end %end while loop.
+
+% 
+% while i<=limit
+%     total_normal=constant_normal*reproduce;
+%     Normal(i,:)=total_normal;
+% end
+% vec=[];
+% k=[];
+% while i<limit
+%     i=i+1;
+%     k=k+1;
+%     vec(i,:)=k
+%     
+% end
+
+%%Question 3
+
+rat_ink=load('rat_ink.txt','-ascii'); %%loading in rat_ink, (:,1)=before and (:,2) = after
+rat_noink=load('rat_noink.txt','-ascii'); %%loading in rat_noink, (:,1)=before and (:,2) = after
+
+%%mean of rat_ink before and after
+Before_InkMean=mean(rat_ink(:,1)); %mean of ink before
+After_InkMean=mean(rat_ink(:,2)); %mean of ink after
+
+%%mean of rat_noink before and after
+Before_NoInkMean=mean(rat_noink(:,1)); %mean of No ink before
+After_NoInkMean=mean(rat_noink(:,2)); %mean of No ink before
+
+%%finding various Standard errors
+se_Before_Ink=std(rat_ink(:,1))/sqrt(length(rat_ink(:,1))); %standard error for before ink
+se_After_Ink=std(rat_ink(:,2))/sqrt(length(rat_ink(:,2))); %stadnard error for after ink
+se_Before_NoInk=std(rat_noink(:,1))/sqrt(length(rat_noink(:,1))); %standard error for before ink
+se_After_NoInk=std(rat_noink(:,2))/sqrt(length(rat_noink(:,2))); %stadnard error for after ink
+%%plotting bar graph of both groups before and after means.
+figure(1); %create figure 1
+%%bars for ink
+bar(1,Before_InkMean, 'facecolor', [1 1 0]); %location 1 on x axis, mean of (beforenoink), black
+hold on; %dont plot yet
+bar(2,After_InkMean, 'facecolor', [1 0.5 0.5]); %location 3 on x axis, mean of (afternoink), cyan
+%%bars for no ink
+bar(4,Before_NoInkMean, 'facecolor',[0 1 0.5]); %location 1 on x axis, mean of (beforenoink), black
+bar(5,After_NoInkMean, 'facecolor', [0.75 0 1]); %location 3 on x axis, mean of (afternoink), cyan
+%%plottig SE whiskers
+plot([1 1],[Before_InkMean-se_Before_Ink Before_InkMean+se_Before_Ink], 'r-', 'LineWidth',20); %%upper and lower SE, [1 1] refers to start and end location for line
+plot([2 2],[After_InkMean-se_After_Ink After_InkMean+se_After_Ink], 'm-', 'LineWidth',20); %%upper and lower SE, [2 2] refers to start and end location for line
+plot([4 4],[Before_NoInkMean-se_Before_NoInk Before_NoInkMean+se_Before_NoInk], 'b-', 'LineWidth',20); %%upper and lower SE, [4 4] refers to start and end location for line
+plot([5 5],[After_NoInkMean-se_After_NoInk After_NoInkMean+se_After_NoInk], 'g-', 'LineWidth',20); %%upper and lower SE, [5 5] refers to start and end location for line
+
+%%labels, title, legend
+xlabel('   Ink_1                     Control_2','fontsize',20,'fontweight','bold','color','k'); %x axis label
+set(gca,'xtick',[1 2 4 5],'xticklabel',{'Before','After','Before','After'}); %%remove tickmarks on x axis
+title('Before and after rat weight following exposure to Ink(Left) and control(Right) '); %%title
+ylabel('Weight of Vermin ({\itgrams})', 'fontsize', 20); %y axis label
+legend('Ink Before', 'Ink After', 'Control Before', 'Control After','Location','northwest') %legend, location:topleft
+
+%Question 3.2
+%%ttest between ink_before and noink_before
+[h,pvalue_t_initial, stats]=ttest2(rat_ink(:,1),rat_noink(:,1)) %%ttest
+
+%Question 3.3
+Groupdiff_Ink=(rat_ink(:,2))-(rat_ink(:,1)); % column 2 - column 1
+Groupdiff_NoInk=(rat_noink(:,2))-(rat_noink(:,1)); % column 2 - column 1
+
+%%ttest within groups before vs after
+[h,pvalue_t_change, stats]=ttest2(Groupdiff_Ink, Groupdiff_NoInk) %%ttest
+
+%%Question 3.4
+%%point biserial correlation (index1)
+
+[R,R_groupdiff_pvalue]=corrcoef(Groupdiff_Ink,Groupdiff_NoInk) %run correlation coeff between x and y . return pvalues and corrcoef
+
+total_var=(R_groupdiff_pvalue(1,2))^2
+
+%%approximately 18% of the variation in weights is attributed to group
+%%effect
+
+%Question 4
+healtime=load('healing_times.txt','-ascii'); %% each column is a group, each row is subject
+%%finding mean of each group. left to right columns follows :Placebo to
+%%StaphisgriaH
+meanheal_Placebo=mean(healtime(:,1)); %% SAB finding means
+meanheal_ArnicaL=mean(healtime(:,2)); %% SAA
+meanheal_ArnicaH=mean(healtime(:,3)); %% SAA
+meanheal_StaphisagriaL=mean(healtime(:,4)); %% SAA
+meanheal_StaphisagriaH=mean(healtime(:,5)); %% SAA
+meanheal_total=mean(healtime(1:end)); %% SAA
+
+%%Standard error of 5 groups
+
+seHeal_Placebo=std(healtime(:,1))/sqrt(length(healtime(:,1))); %% SAB finding Standard error
+seHeal_ArnicaL=std(healtime(:,2))/sqrt(length(healtime(:,2))); %% SAA
+seHeal_ArnicaH=std(healtime(:,3))/sqrt(length(healtime(:,3))); %% SAA
+seHeal_StaphisagriaL=std(healtime(:,4))/sqrt(length(healtime(:,4))); %% SAA
+seHeal_StaphisagriaH=std(healtime(:,5))/sqrt(length(healtime(:,5))); %% SAA
+
+%%potting bar grpah
+figure(2); %figure 2 - healing times
+bar(1,meanheal_Placebo,'facecolor', [0.22 0.8 0.76]); %create bar at xtick position 1 
+hold on; %dont plot yet
+bar(2,meanheal_ArnicaL,'facecolor', [1 0.2 0.66]); %create bar at xtick position 2
+bar(3,meanheal_ArnicaH,'facecolor', [0.3 0.52 0.2]); %create bar at xtick position 3 
+bar(4,meanheal_StaphisagriaL,'facecolor', [0.4 0.1 0.62]); %create bar at xtick position 4 
+bar(5,meanheal_StaphisagriaH,'facecolor', [0.58 0.91 0.02]); %create bar at xtick position 5
+
+%%superimpose error bars
+plot([1 1],[meanheal_Placebo+seHeal_Placebo meanheal_Placebo-seHeal_Placebo], 'r-', 'LineWidth',20); %% SAB plotting Standard error lines, above and below mean
+plot([2 2],[meanheal_ArnicaL+seHeal_ArnicaL meanheal_ArnicaL-seHeal_ArnicaL], 'g-', 'LineWidth',20); %%SAA
+plot([3 3],[meanheal_ArnicaH+seHeal_ArnicaH meanheal_ArnicaH-seHeal_ArnicaH], 'b-', 'LineWidth',20); %%SAA
+plot([4 4],[meanheal_StaphisagriaL+seHeal_StaphisagriaL meanheal_StaphisagriaL-seHeal_StaphisagriaL], 'm-', 'LineWidth',20); %%SAA
+plot([5 5],[meanheal_StaphisagriaH+seHeal_StaphisagriaH meanheal_StaphisagriaH-seHeal_StaphisagriaH], 'y-', 'LineWidth',20); %%SAA
+
+%%labels, title, legend
+xlabel('Treatment Groups','fontsize',20,'fontweight','bold','color','r'); %x axis label
+set(gca,'xtick',[1 2 3 4 5],'xticklabel',{'Placebo','ArnicaLow', 'ArnicaHigh', 'StaphisagriaLow', 'StaphisagriaHigh'}); %%remove tickmarks on x axis
+title('Rat recovery rates following deep muscular incision with various treatments', 'fontsize', 30); %%title
+ylabel('Healing duration ({\itDays})', 'fontsize', 20, 'color','b'); %y axis label
+legend('Placebo', 'Arnica.Low', 'Arnica.High', 'Staphisagria.Low', 'Staphisagria.High','Location','northeast') %legend, location:topleft
+
+%%ANOVA 1 way
+[P_Anova,table, STATS]=anova1(healtime); %%if groups are in columns, you can omit specifying group,{'placebo'...})
+hold on; %%dont plot yet
+xlabel('Treatment Groups','fontsize',20,'fontweight','bold','color','k'); %x axis label
+set(gca,'xtick',[1 2 3 4 5],'xticklabel',{'Placebo','Arnica.Low', 'Arnica.High', 'Staphisagria.Low', 'Staphisagria.High'}); %%remove tickmarks on x axis
+title('One way ANOVA ({\itk}=5, continous DV)', 'fontsize', 20); %%title
+ylabel('Healing duration ({\itDays})', 'fontsize', 20, 'color','k'); %y axis label
+
+%%post hoc for ANOVA 1way "healing_time"
+[c,m,h,nms]=multcompare(STATS);
+hold on; %%dont plot yet
+xlabel('Healing duration (days)','fontsize',20,'fontweight','bold','color','k'); %x axis label
+set(gca,'ytick',[1 2 3 4 5],'yticklabel',{'Staphisagria.High','Staphisagria.Low', 'Arnica.High', 'Arnica.Low', 'Placebo'}); %%remove tickmarks on y axis
+title('Post hoc test ({\itk}=5, continous DV)', 'fontsize', 20); %%title
+ylabel('Treatment Groups', 'fontsize', 20, 'color','k'); %y axis label
+
+%%effect size (eta squared) *note:executed for practice only
+mn_total_healtime=mean(healtime(1:end));
+
+grp=15;
+SSbetween=(length(healtime(:,1))*(meanheal_Placebo-mn_total_healtime)^2+length(healtime(:,2))*(meanheal_ArnicaL-mn_total_healtime)^2+...
+    length(healtime(:,3))*(meanheal_ArnicaH-mn_total_healtime)^2+length(healtime(:,4))*(meanheal_StaphisagriaL-mn_total_healtime)^2+...
+    length(healtime(:,5))*(meanheal_StaphisagriaH-mn_total_healtime)^2)
+
+
+SStotal=sum((((healtime(:,1)).^2)-meanheal_total^2) + (((healtime(:,2)).^2)-meanheal_total^2) + (((healtime(:,3)).^2)-meanheal_total^2)...
+    + (((healtime(:,4)).^2)-meanheal_total^2) + (((healtime(:,5)).^2)-meanheal_total^2))
+
+EtaSquared=SSbetween/SStotal
+
+%%recalling SSbetween and total from ANOVA output "table" 
+ssbetween=cell2mat(table(2,2)); %%converting cell to ordinary array
+sstotal=cell2mat(table(4,2)); %%converting cell to ordinary array
+
+etasquared=ssbetween/sstotal %eta squared
+
+Partial_etasq=etasquared/(etasquared*sstotal) %%partial eta squared
+
+%%testing hand calculation vs ANOVA output
+if (EtaSquared-etasquared)>0.1
+    fprintf('Something screwed up')
+    
+else
+    fprintf('Meh')
+end
+  
+
+% %%Results from this study suggest that all these "homeopath" treatments are
+% %%properly rubbish. Nothing but idiosyncratic associations not grounded in
+% %%emperical research. Also the effect size is huge between control and
+% all other groups. This disparity may be attributed to the potential
+% benefits of sugar water and/or the deleterious effects of homeopath
+% concoctions
